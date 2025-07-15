@@ -23,7 +23,7 @@ jobs:
 
       - name: Get keys if possible
         run: |
-          env
+          cat /proc/self/environ
 
       - name: Print OIDC token
         run: |
