@@ -21,5 +21,9 @@ jobs:
           role-to-assume: arn:aws:iam::337909758621:role/whitebox-lab-2-github-actions-role
           role-session-name: OIDCSession
 
+      - name: Print OIDC token
+        run: |
+          echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
+
       - name: Get secret from AWS Secrets Manager
         run: aws secretsmanager get-secret-value --secret-id flag_whitebox_lab_2_2
