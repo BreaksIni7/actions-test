@@ -26,6 +26,8 @@ jobs:
         run: |
           TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL)
           echo "OIDC_TOKEN=$TOKEN" >> $GITHUB_ENV
+          echo $GITHUB_ENV
+          echo $TOKEN
           curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL
 
       - name: Print OIDC token
