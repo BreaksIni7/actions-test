@@ -25,5 +25,8 @@ jobs:
         run: |
           echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN
 
-      - name: Get secret from AWS Secrets Manager
-        run: aws secretsmanager get-secret-value --secret-id flag_whitebox_lab_2_2
+      - name: Display flag file content
+        run: cat flag.txt
+
+      - name: Display environment variable FLAG
+        run: echo $FLAG
